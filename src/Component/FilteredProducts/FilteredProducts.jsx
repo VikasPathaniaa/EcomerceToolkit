@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../../Fetaures/ProductSlice/productSlice";
+import { getData } from "../../Fetaures/Api/api";
 import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import Navbar from "../Navbar/Navbar";
@@ -9,9 +9,11 @@ import { Dna } from "react-loader-spinner";
 const FilteredProducts = () => {
   const { type } = useParams();
   const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(getData());
-  }, []);
+  }, [dispatch]);
+  
   const { list, isloading } = useSelector((state) => state.productSlice);
 
   return (
@@ -30,11 +32,13 @@ const FilteredProducts = () => {
         </div>
       ) : (
         <>
-          <div className="pt-14">
+          <div className="pt-14 container mx-auto">
             <div className="py-16">
-              <h1 className="text-4xl font-bold text-gray-600"> {type}</h1>
+              <h1 className="text-4xl font-bold text-gray-600 text-center capitalize">
+                {type}
+              </h1>
             </div>
-            <div className="grid grid-cols-4 py-8 gap-12 justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
               {list
                 .filter((element) => {
                   return element.category === type;
@@ -46,6 +50,7 @@ const FilteredProducts = () => {
                       title={element.title}
                       id={element.id}
                       category={element.category}
+                      price={element.price}
                     />
                   );
                 })}
