@@ -19,7 +19,7 @@ const Product = () => {
   console.log("********", Product);
 
   return (
-    <div className="flex flex-col lg:flex-row justify-center shadow-md p-8 mx-auto w-[800px]">
+    <div className="flex flex-col lg:flex-row justify-center shadow-md p-8 mx-auto w-[800px] mt-[100px]">
       <div className="lg:w-1/2 flex justify-center">
         <img
           src={Product.image}
