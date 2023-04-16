@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Tooltip, Button } from "@material-tailwind/react";
-import  { addToCart } from "../../Fetaures/CartSlice/cartSlice";
+import { addToCart } from "../../Fetaures/CartSlice/cartSlice";
 import { singleProduct } from "../../Fetaures/ProductSlice/productSlice";
+import ButtonComponent from "../ResuableComponent/Button";
 
 const Product = () => {
   const { id } = useParams();
@@ -16,25 +17,41 @@ const Product = () => {
 
   const Product = useSelector((state) => state.productSlice.Product);
 
+  function handleClick() {
+    dispatch(
+      addToCart({
+        id: Product.id,
+        price: Product.price,
+        amount: 1,
+        totalPrice: Product.price,
+        img: Product.image,
+        title: Product.title,
+      })
+    );
+  }
   return (
     <div className="shadow-md p-8 mx-auto w-[800px] mt-[100px] flex flex-col ">
-     <div className="flex flex-row justify-center" >
+      <div className="flex flex-row justify-center">
         <img
           src={Product.image}
           alt="img  not found "
           className="w-[300px] h-[400px] shadow-lg shadow-gray-500/50 p-6"
         />
-      <div className="flex justify-center flex-col p-4">
-        <div>{Product.category}</div>
-        <div className="text-orange-700 font-bold">15% off</div>
-        <div>{Product.title}</div>
-      
+        <div className="flex justify-center flex-col p-4">
+          <div>{Product.category}</div>
+          <div className="text-orange-700 font-bold">15% off</div>
+          <div>{Product.title}</div>
+        </div>
       </div>
-    </div>
-
-          <Button
+      <ButtonComponent
+        title="Add To Cart"
+        customStyle=" w-[50%] m-auto mt-4"
+        onClick={handleClick}
+        
+      />
+      {/* <Button
             variant="outlined"
-            className="border-solid border-2 border-gray-500 mt-4 lg:mt-12 w-[50%]"
+            className="border-solid border-2 border-gray-500  w-[50%] m-auto mt-4"
             color="gray"
             ripple={true}
             onClick={() =>
@@ -51,9 +68,8 @@ const Product = () => {
             }
           >
             Add To Cart
-          </Button>
+          </Button> */}
     </div>
-   
   );
 };
 

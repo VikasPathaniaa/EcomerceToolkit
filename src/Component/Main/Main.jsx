@@ -1,4 +1,5 @@
 import React from 'react';
+import ProdcutSection from '../../ProductSection/ProdcutSection';
 
 const Main = () => {
   return (
@@ -15,6 +16,7 @@ const Main = () => {
       <div>
         <img src="/assets/banner.jpg" alt="banner is not defined " className="shadow-[0px_1px_7px_3px_#a0aec0] my-8 my-element transform scale-90" /> 
       </div>
+      <ProdcutSection/>
     </>
   );
 }

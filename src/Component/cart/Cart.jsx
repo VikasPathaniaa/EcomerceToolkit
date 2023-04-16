@@ -2,6 +2,7 @@ import React from "react";
 // import ermptyBagImg from "../../../public/assets/emptyBag.avif"
 import { useSelector, useDispatch } from "react-redux";
 import { removefromCart } from "../../Fetaures/CartSlice/cartSlice";
+import ButtonComponent from "../ResuableComponent/Button";
 
 const Cart = () => {
   const { totalAmmount, cart, totalPrice } = useSelector(
@@ -36,14 +37,11 @@ const Cart = () => {
                       <p>Price {item.price}</p>
                       <p>Total Items {item.ammount}</p>
                       <p>Total {item.totalPrice}</p>
-                      <button
-                        className="p-2 rounded-full"
-                        color="red"
+                      <ButtonComponent
+                        customStyle="capitalize"
+                        title="Remove"
                         onClick={() => dispatch(removefromCart(item))}
-                      >
-                        {" "}
-                        Remove
-                      </button>
+                      />
                     </div>
                   </div>
                 </>
@@ -55,13 +53,14 @@ const Cart = () => {
       ) : (
         <>
           <div className="flex flex-col justify-center items-center mb-20">
-            <img src="/assets/emptyBag.avif" alt="empty Bag" width={300} height={300}/>
-           <p>
-            
-           Your Bag is empty
-            </p> 
-             
-              </div>
+            <img
+              src="/assets/emptyBag.avif"
+              alt="empty Bag"
+              width={300}
+              height={300}
+            />
+            <p>Your Bag is empty</p>
+          </div>
         </>
       )}
     </>

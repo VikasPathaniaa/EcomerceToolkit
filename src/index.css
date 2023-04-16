@@ -3,7 +3,14 @@
 @tailwind utilities;
 
 
+img,
+video {
+  height: unset !important;
+}
 
+img.my-image {
+    height: 300px !important;
+  }
 @layer base {
     button {
         @apply bg-[#5651e5] !important;
