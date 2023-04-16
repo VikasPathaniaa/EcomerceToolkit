@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../../Fetaures/Api/api";
 import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
-import Navbar from "../Navbar/Navbar";
 import { Dna } from "react-loader-spinner";
+import { getData } from "../../Fetaures/ProductSlice/productSlice";
 
 const FilteredProducts = () => {
   const { type } = useParams();
@@ -18,7 +17,7 @@ const FilteredProducts = () => {
 
   return (
     <>
-      <Navbar />
+      
       {isloading ? (
         <div className="flex items-center justify-center h-screen">
           <Dna

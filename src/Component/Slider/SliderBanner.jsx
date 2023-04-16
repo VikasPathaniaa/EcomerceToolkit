@@ -7,7 +7,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import data from "./data.json";
 
-const Slider = () => {
+const SliderBanner = () => {
   const value = useSelector((state) => state.slider.value);
   const dispatch = useDispatch();
   console.log(value);
@@ -64,7 +64,7 @@ const Slider = () => {
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            fill="white"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
@@ -84,7 +84,7 @@ const Slider = () => {
           {" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
+            fill="white"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
@@ -102,4 +102,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default SliderBanner;

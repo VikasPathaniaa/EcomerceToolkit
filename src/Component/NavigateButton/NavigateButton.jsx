@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const NavigateButton = () => {
   const button = [
     "men's clothing",
@@ -9,8 +10,8 @@ const NavigateButton = () => {
     "electronics",
   ];
   return (
-    <div>
-      <div className="flex justify-center">
+    <>
+      <div className="flex justify-center flex-wrap">
         {button.map((button, index) => {
           return (
             <div key={index} className="my-6">
@@ -23,16 +24,7 @@ const NavigateButton = () => {
           );
         })}
       </div>
-      <div className="h-[50px] w-[500px] bg-green-300 rounded-full mx-auto mt-5 mb-4">
-        <h2 className="text-orange-400 text-center underline font-bold p-4">
-          {" "}
-          Latest offer 50% off
-        </h2>
-      </div>
-      <div className="flex justify-center">
-        <img className="rounded" src="/assets/clothes.jpg" alt="clothes img " />
-      </div>
-    </div>
+    </>
   );
 };
 
