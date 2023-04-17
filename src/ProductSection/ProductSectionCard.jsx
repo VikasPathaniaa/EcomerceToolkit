@@ -7,21 +7,22 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import ButtonComponent from "../Component/ResuableComponent/Button";
+import {useDispatch} from "react-redux";
+import { addToCart } from "../Fetaures/CartSlice/cartSlice";
 
-function ProductSectionCard({ id, description, category, image, price }) {
+function ProductSectionCard({ id, description, category, image, price , title }) {
+  const dispatch = useDispatch()
   return (
     <>
       <Card>
-        <CardHeader  className="relative  flex justify-center">
+        <CardHeader className="relative  flex justify-center">
           <img src={image} alt="img-blur-shadow" className="my-image" />
         </CardHeader>
         <CardBody className="text-center">
           <Typography variant="h5" className="mb-2">
             {category}
           </Typography>
-          <Typography>
-           {description.slice(0,50)}
-          </Typography>
+          <Typography>{description.slice(0, 50)}</Typography>
         </CardBody>
         <CardFooter divider className="flex items-center justify-between py-3">
           <Typography variant="small">{Math.floor(price)} Rs</Typography>
@@ -31,8 +32,20 @@ function ProductSectionCard({ id, description, category, image, price }) {
           </Typography>
         </CardFooter>
         <ButtonComponent
-        title="Add to Cart"
-        customStyle={"w-[80%] m-auto mb-2 rounded-lg"}
+          title="Add to Cart"
+          customStyle={"w-[80%] m-auto mb-2 rounded-lg"}
+          onClick={() => {
+            dispatch(
+              addToCart({
+                id: id,
+                price: price,
+                amount: 1,
+                totalPrice: price,
+                img:image,
+                title:title,
+              })
+            );
+          }}
         />
       </Card>
     </>

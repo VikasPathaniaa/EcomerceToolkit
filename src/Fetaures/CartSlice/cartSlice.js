@@ -14,15 +14,13 @@ const cartSlice = createSlice({
       const exist = state.cart.find((product) => {
         return product.id === productId.id;
       });
-      console.log("exxisssttt", exist);
+      console.log(exist);
       if (exist) {
-        console.log("if part ruunninnggg");
         exist.ammount++;
         exist.totalPrice += productId.price;
         state.totalAmmount++;
         state.totalPrice += productId.price;
       } else {
-        console.log("else  esle ruunninnggg");
         state.cart.push({
           id: productId.id,
           price: productId.price,

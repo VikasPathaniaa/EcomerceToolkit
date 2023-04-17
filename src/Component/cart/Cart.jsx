@@ -34,9 +34,9 @@ const Cart = () => {
                       <p> {item.title.slice(0, 10)}...</p>
                     </div>
                     <div className="ml-7">
-                      <p>Price {item.price}</p>
+                      <p>Price {Math.floor(item.price)} Rs</p>
                       <p>Total Items {item.ammount}</p>
-                      <p>Total {item.totalPrice}</p>
+                      <p>Total {Math.floor(item.totalPrice)} Rs</p>
                       <ButtonComponent
                         customStyle="capitalize"
                         title="Remove"
@@ -47,7 +47,7 @@ const Cart = () => {
                 </>
               );
             })}
-            <p> your total price {Math.ceil(totalPrice)}</p>
+            <p> Your total price {Math.ceil(totalPrice)} Rs</p>
           </div>
         </>
       ) : (
