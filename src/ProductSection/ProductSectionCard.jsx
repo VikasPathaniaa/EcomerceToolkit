@@ -14,7 +14,7 @@ function ProductSectionCard({ id, description, category, image, price , title })
   const dispatch = useDispatch()
   return (
     <>
-      <Card>
+      <Card className="my-10">
         <CardHeader className="relative  flex justify-center">
           <img src={image} alt="img-blur-shadow" className="my-image" />
         </CardHeader>
@@ -31,9 +31,11 @@ function ProductSectionCard({ id, description, category, image, price , title })
             Barcelona, Spain
           </Typography>
         </CardFooter>
+        <div className="w-[80%] mx-auto text-center">
+        <a href="#home">
         <ButtonComponent
           title="Add to Cart"
-          customStyle={"w-[80%] m-auto mb-2 rounded-lg"}
+          customStyle={"w-[80%] mx-auto mb-2 rounded-lg"}
           onClick={() => {
             dispatch(
               addToCart({
@@ -47,6 +49,8 @@ function ProductSectionCard({ id, description, category, image, price , title })
             );
           }}
         />
+        </a>
+        </div>
       </Card>
     </>
   );

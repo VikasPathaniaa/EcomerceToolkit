@@ -1,12 +1,32 @@
-import React from 'react';
-import ProdcutSection from '../../ProductSection/ProdcutSection';
+import React, { useEffect, useState } from "react";
+import ProdcutSection from "../../ProductSection/ProdcutSection";
 
 const Main = () => {
+  // const [hours, setHours] = useState(1);
+  // const [min, setMin] = useState(60);
+  // const [sec, setSec] = useState(60);
+
+  // useEffect(() => {
+  //    setInterval(() => {
+  //       if (sec == 60) {
+  //         setSec((prevValue) => prevValue - 1);
+  //       }
+  //       if(sec== 0 && min==60){
+  //         setMin(min-1)
+  //         setSec(60)
+  //       }
+  //       if(min==0 && hours==1 ){
+  //         setHours(hours-1)
+  //       }
+  //     }, 1000)
+  // }, []);
   return (
     <>
-    <div className="h-[50px] w-[200px] bg-green-300 rounded-full mx-auto mt-5 mb-4">
-        <h2 className="text-orange-400 text-center underline font-bold p-4">
-          {" "}
+      <div
+        id="offer"
+        className=" bg-[#263238] w-[50%] mx-auto rounded-md py-2 mb-4"
+      >
+        <h2 className="text-white text-center text-lg tracking-widest">
           Latest offer 50% off
         </h2>
       </div>
@@ -14,11 +34,16 @@ const Main = () => {
         <img className="rounded" src="/assets/clothes.jpg" alt="clothes img " />
       </div>
       <div>
-        <img src="/assets/banner.jpg" alt="banner is not defined " className="shadow-[0px_1px_7px_3px_#a0aec0] my-8 my-element transform scale-90" /> 
+        <img
+          src="/assets/banner.jpg"
+          alt="banner is not defined "
+          className="shadow-[0px_1px_7px_3px_#a0aec0] my-8 my-element transform scale-90"
+        />
+        {/* <div>{hours}{min}{sec}</div> */}
       </div>
-      <ProdcutSection/>
+      <ProdcutSection />
     </>
   );
-}
+};
 
 export default Main;

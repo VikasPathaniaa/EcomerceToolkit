@@ -12,9 +12,7 @@ const SliderBanner = () => {
   const dispatch = useDispatch();
   console.log(value);
   return (
-    <div>
-      <div className="relative pb-4">
-        <div>
+      <div className="relative">
           {data.map((ele, index) => {
             return (
               <div
@@ -27,28 +25,28 @@ const SliderBanner = () => {
               >
                 {ele.id === value && (
                   <img
-                    className="h-[500px] w-full"
+                    className="h-full w-full"
                     src={ele.img}
                     alt="slider img"
                   />
                 )}
-                <div className="absolute top-44 mx-auto inset-x-1/4 ">
-                  <p className="text-white text-2xl font-inter font-bold ">
+                {/* <div className="fixed top-10 mx-auto  bg-black opacity-20 ">
+                  <p className="text-white text-2xl font-inter font-bold sm:text-xs text-center p-5 ">
                     {ele.id === value && ele.title}
                   </p>
-                </div>
+                </div> */}
               </div>
             );
           })}
-        </div>
-        <div className=" flex absolute bottom-20 left-[45%]">
+       
+        <div className=" flex absolute bottom-[10%] left-[30%]  md:left-[45%] ">
           {data.map((dot, index) => {
             return (
               <div className="m-4" key={dot.id}>
                 <div
                   className={
                     index === value
-                      ? "bg-green-300 rounded-full p-4 cursor-pointer"
+                      ? "bg-[#263238] rounded-full p-4 cursor-pointer"
                       : "bg-white rounded-full p-4 cursor-pointer"
                   }
                   onClick={()=>dispatch(dotSlide(index))}
@@ -98,7 +96,7 @@ const SliderBanner = () => {
           </svg>
         </button>
       </div>
-    </div>
+    
   );
 };
 

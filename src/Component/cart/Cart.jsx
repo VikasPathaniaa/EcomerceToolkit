@@ -27,7 +27,7 @@ const Cart = () => {
                     <div>
                       <img
                         src={item.img}
-                        alt="image not found "
+                        alt="Logo not found "
                         height={100}
                         width={100}
                       />

@@ -11,15 +11,16 @@ const NavigateButton = () => {
   ];
   return (
     <>
-      <div className="flex justify-center flex-wrap">
+      <div>
+        <div className="w-[50%] flex-col justify-between mx-auto text-center md:grid grid-cols-2 lg:grid-cols-4">
         {button.map((button, index) => {
           return (
-            <div key={index} className="my-6">
+            <div key={index} className="w-max-content mx-4 p-2">
               <Link to={`/filteredProducts/${button}`}>
                 <ButtonComponent
                   title={button}
                   customStyle={
-                    " capitalize rounded-lg font-bold py-2 px-4 rounded mx-4"
+                    " h-[80%]  capitalize rounded-lg font-bold py-2 px-4 rounded mr-4"
                   }
                 />
 
@@ -30,6 +31,7 @@ const NavigateButton = () => {
             </div>
           );
         })}
+        </div>
       </div>
     </>
   );

@@ -15,8 +15,8 @@ export const singleProduct = createAsyncThunk(
   "singleProduct/productSlice",
   async (id) => {
     let response = await axios.get(`https://fakestoreapi.com/products/${id}`);
-    let result = await response.data;
-    return result;
+   return response.data;
+    // return result;
   }
 );
 

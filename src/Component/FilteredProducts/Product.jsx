@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Tooltip, Button } from "@material-tailwind/react";
 import { addToCart } from "../../Fetaures/CartSlice/cartSlice";
 import { singleProduct } from "../../Fetaures/ProductSlice/productSlice";
 import ButtonComponent from "../ResuableComponent/Button";
