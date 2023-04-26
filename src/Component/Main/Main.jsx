@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProdcutSection from "../../ProductSection/ProdcutSection";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Main = () => {
   // const [hours, setHours] = useState(1);
@@ -42,6 +43,7 @@ const Main = () => {
         {/* <div>{hours}{min}{sec}</div> */}
       </div>
       <ProdcutSection />
+      <Testimonial/>
     </>
   );
 };

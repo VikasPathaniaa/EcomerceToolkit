@@ -1,9 +1,9 @@
 import React from "react";
 import { Button } from "@material-tailwind/react";
-const ButtonComponent = ({ title, customStyle, onClick }) => {
+const ButtonComponent = ({ title, customStyle, onClick, icon }) => {
   return (
     <Button className={customStyle} onClick={onClick}>
-      {title}
+      {icon} {title}
     </Button>
   );
 };

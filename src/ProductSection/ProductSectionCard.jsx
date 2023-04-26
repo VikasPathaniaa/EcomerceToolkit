@@ -9,6 +9,7 @@ import {
 import ButtonComponent from "../Component/ResuableComponent/Button";
 import {useDispatch} from "react-redux";
 import { addToCart } from "../Fetaures/CartSlice/cartSlice";
+import {AiOutlineShoppingCart} from "react-icons/ai"
 
 function ProductSectionCard({ id, description, category, image, price , title }) {
   const dispatch = useDispatch()
@@ -35,7 +36,8 @@ function ProductSectionCard({ id, description, category, image, price , title })
         <a href="#home">
         <ButtonComponent
           title="Add to Cart"
-          customStyle={"w-[80%] mx-auto mb-2 rounded-lg"}
+          customStyle={"w-[80%] mx-auto mb-2 rounded-lg flex justify-center  "}
+          icon={<AiOutlineShoppingCart className="mr-2"/>}
           onClick={() => {
             dispatch(
               addToCart({
