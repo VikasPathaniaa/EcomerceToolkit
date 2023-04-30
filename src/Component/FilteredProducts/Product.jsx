@@ -12,7 +12,7 @@ const Product = () => {
   //* request for get data with the help of dispatch the function
   useEffect(() => {
     dispatch(singleProduct(id));
-  }, [dispatch, id]);
+  }, [id]);
 
   const Product = useSelector((state) => state.productSlice.Product);
 

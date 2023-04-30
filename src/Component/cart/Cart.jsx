@@ -47,14 +47,14 @@ const Cart = () => {
                 </>
               );
             })}
-            <p> Your total price {Math.ceil(totalPrice)} Rs</p>
+            <p> Your total price {Math.floor(totalPrice)} Rs</p>
           </div>
         </>
       ) : (
         <>
           <div className="flex flex-col justify-center items-center mb-20">
             <img
-              src="/assets/emptyBag.avif"
+              src={"/assets/emptyBag.avif"}
               alt="empty Bag"
               width={300}
               height={300}

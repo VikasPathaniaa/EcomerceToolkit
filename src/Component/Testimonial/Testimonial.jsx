@@ -10,8 +10,7 @@ const Testimonial = () => {
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    prevArrow: <GrFormPre
-    vious className="border-solid border-black	rounded-2xl	"/>,
+    prevArrow: <GrFormPrevious className="border-solid border-black	rounded-2xl	"/>,
     nextArrow: <GrFormNext className="border-solid border-black	rounded-2xl	" />,
     responsive: [
       {
